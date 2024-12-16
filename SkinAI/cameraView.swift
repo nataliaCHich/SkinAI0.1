@@ -1,18 +1,33 @@
 //
-//  cameraView.swift
+//  calendarView.swift
 //  SkinAI
 //
 //  Created by Chicherova Natalia2 on 15/12/24.
 //
-
+// Imports remain the same
 import SwiftUI
-
 struct cameraView: View {
+    @State private var showMainScreen = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            ZStack {
+          
+                
+                // Profile picture overlay (will be visible on all tabs)
+                VStack {
+                    
+                }
+            }
+            .navigationDestination(isPresented: $showMainScreen) {
+                mainScreenView()
+            }
+        }
     }
 }
-
-#Preview {
-    cameraView()
+// Preview remains the same
+struct cameraView_Previews: PreviewProvider {
+    static var previews: some View {
+        cameraView()
+    }
 }
